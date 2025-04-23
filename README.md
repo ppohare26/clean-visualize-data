@@ -34,7 +34,7 @@ This script imports the cleaned dataset and performs various visualizations:
    - One for total projects completed by field  
    - One for total internships completed by field
 
-All visualizations are built using `matplotlib` and `seaborn`.
+All visualizations are built using `matplotlib` and `plotly`.
 
 ---
 
@@ -44,7 +44,7 @@ All visualizations are built using `matplotlib` and `seaborn`.
 2. Install required libraries:
 
 ```bash
-pip install pandas numpy matplotlib seaborn
+pip install pandas numpy matplotlib plotly
 ```
 3. Save your dataset as Dataset.csv in the same directory.
 4. Run the scripts
