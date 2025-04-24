@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Import the data cleaning function from another module
-from DataCleaning import clean_data
+
 df = clean_data()
 
 # Function to generate visualizations from the cleaned data

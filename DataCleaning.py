@@ -7,7 +7,7 @@ import jupyter
 def clean_data():
     
     # Load the dataset from a specified CSV file path
-    df = pd.read_csv('/Users/prajaktapohare/Library/CloudStorage/OneDrive-RoshanDevs/Python Project/Dataset.csv')
+    df = pd.read_csv('Dataset.csv')
     print(df)
 
     # Display the number of rows and columns in the dataset     
@@ -85,6 +85,8 @@ def clean_data():
 
     df['Starting_Salary'] = np.where(df['Starting_Salary'] > sales_cap, sales_cap, df['Starting_Salary'])
     print(df)
+    
+    df.to_csv('Cleaned_Dataset.csv', index=False)
     
     return df
 
