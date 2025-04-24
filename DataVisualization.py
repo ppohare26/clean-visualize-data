@@ -62,5 +62,37 @@ def visualize_data():
     
     return df
 
+    #Create a Funnel
+    # Define the labels for different job levels
+    labels =["Entry", "Executive", "Mid", "Senior"]
+    
+    # Count how many individuals fall under each job level
+    level_counts = df['Current_Job_Level'].value_counts()
+    
+    df1 = pd.DataFrame({"Labels": labels, "Value": level_counts})
+    
+    # Set a clean, minimalistic visual style for the plot
+    with plt.style.context("fivethirtyeight"):
+        fig = plt.figure(figsize=(10,8))
+        
+        colors = ["#a9d18e", "#ffc000", "#ed7d31", "#5b9bd5"]
+        plt.fill_betweenx(y=[1, 3.8], x1=[10,12], x2=[8,6], color=colors[0]);
+        plt.fill_betweenx(y=[4, 6.8], x1=[12,14], x2=[6,4], color=colors[1]);
+        plt.fill_betweenx(y=[7, 9.8], x1=[14,16], x2=[4,2], facecolor=colors[2], edgecolor="black", linewidth=5);
+        plt.fill_betweenx(y=[10, 12.8], x1=[16,18], x2=[2,0], color=colors[3]);
+        
+        plt.xticks([],[]);
+        plt.yticks([2,5,8,11], df1["Labels"][::-1]);
+        
+        for y, value in zip([2,5,8,11], df1["Value"][::-1]):
+            plt.text(9, y, value, fontsize=16, fontweight="bold", color="white", ha="center");
+        
+        plt.grid(visible=False);
+        
+        # Add label and title
+        plt.ylabel("Stages");
+        plt.title("Sales Funnel", loc="center", fontsize=25, fontweight="bold");
+        plt.show()
+
 # Call the function to display visualizations
 visualize_data()
