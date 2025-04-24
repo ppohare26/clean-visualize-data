@@ -37,7 +37,15 @@ This script imports the cleaned dataset and performs various visualizations:
 All visualizations are built using `matplotlib` and `plotly`.
 
 ---
+## 📈 Part 3: Dashboard (`app.py`,`pages`)
 
+This uses dash and plotly in order to do the visualization and create a dashboard:
+1. **intro.py**
+2. **dataset.py**
+3. **jobs.py**
+4. **distribution.py**
+5. **relationships.py**
+---
 ## 🚀 How to Run
 
 1. Ensure Python is installed (recommended: Python 3.9+)
